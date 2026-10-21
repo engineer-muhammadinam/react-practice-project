@@ -4,6 +4,7 @@ import Home from "./home"
 import About from "./about"
 import Services from "./services"
 import Contact from "./contact"
+import './style.css'
 
 
 createRoot(document.getElementById('root')).render(
