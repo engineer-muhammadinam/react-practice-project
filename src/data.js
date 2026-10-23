@@ -114,6 +114,7 @@ export const contact = {
     "Feel free to reach out through any of the platforms below. Let's connect, collaborate, and create something impactful together!",
   ],
   email: 'muhammadinam247@gmail.com',
+    web3formsKey: 'd7b1be77-42b0-46b9-acad-aadf1d017902',
   github: 'https://github.com/engineer-muhammadinam',
   linkedin: 'https://www.linkedin.com/in/muhammad-inam-59a505439',
   closing: "Let's turn great ideas into intelligent solutions.",
