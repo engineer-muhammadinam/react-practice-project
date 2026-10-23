@@ -1,5 +1,6 @@
 import { profile, contact } from '../data'
 import TypingRoles from './TypingRoles'
+import AnimatedName from './AnimatedName'
 
 const nodes = [
   [80, 120], [220, 60], [360, 150], [520, 80], [700, 140],
@@ -100,8 +101,15 @@ export default function Hero() {
             {profile.role}
           </span>
 
-   <h1 className="animate-name mt-6 bg-linear-to-r from-indigo-500 via-cyan-400 to-indigo-500 bg-[length:200%_auto] bg-clip-text text-5xl font-extrabold tracking-tight text-transparent sm:text-6xl lg:text-7xl">
-  {profile.name}
+
+<span className="inline-flex items-center gap-2 rounded-full border border-indigo-500/30 bg-indigo-500/10 px-4 py-1.5 text-sm font-medium text-indigo-500 sm:text-base">
+  <span className="wave" aria-hidden="true">👋</span>
+  Hello, I'm 
+</span>
+
+
+<h1 className="name-glow mt-5 text-5xl font-extrabold tracking-tight sm:text-6xl lg:text-7xl">
+  <AnimatedName text={profile.name} />
 </h1>
 <div className="animate-draw-line mx-auto mt-3 h-1 w-24 origin-left rounded-full bg-linear-to-r from-indigo-500 to-cyan-400 md:mx-0" />
 
