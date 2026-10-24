@@ -4,7 +4,7 @@ import Hero from './components/Hero'
 import About from './components/About'
 import Skills from './components/Skills'
 import Contact from './components/Contact'
-import { profile } from './data'
+import { profile, contact } from './data'
 
 export default function App() {
   const [dark, setDark] = useState(true)
@@ -22,8 +22,24 @@ export default function App() {
         <Skills />
         <Contact />
       </main>
-      <footer className="border-t border-slate-200 py-6 text-center text-sm text-slate-500 dark:border-slate-800">
-        © {new Date().getFullYear()} {profile.name}
+
+      <footer className="border-t border-slate-200 bg-slate-50 dark:border-slate-800 dark:bg-slate-900/40">
+        <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 px-6 py-8 sm:flex-row">
+          <p className="text-sm text-slate-500">
+            © {new Date().getFullYear()} {profile.name}. All rights reserved.
+          </p>
+          <div className="flex gap-5 text-sm font-medium">
+            <a href={contact.github} target="_blank" rel="noreferrer" className="text-slate-600 hover:text-indigo-500 dark:text-slate-400">
+              GitHub
+            </a>
+            <a href={contact.linkedin} target="_blank" rel="noreferrer" className="text-slate-600 hover:text-indigo-500 dark:text-slate-400">
+              LinkedIn
+            </a>
+            <a href="#home" className="text-slate-600 hover:text-indigo-500 dark:text-slate-400">
+              Back to top
+            </a>
+          </div>
+        </div>
       </footer>
     </div>
   )

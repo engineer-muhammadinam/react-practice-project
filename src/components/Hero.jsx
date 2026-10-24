@@ -93,25 +93,15 @@ export default function Hero() {
 
       <div className="flex max-w-5xl flex-col-reverse items-center gap-12 md:flex-row md:gap-16">
         <div className="animate-fade-up text-center md:text-left">
-          <span className="inline-flex items-center gap-2 rounded-full border border-indigo-500/30 bg-indigo-500/10 px-4 py-1.5 text-xs font-medium text-indigo-500 sm:text-sm">
-            <span className="relative flex h-2 w-2">
-              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-cyan-400 opacity-75" />
-              <span className="relative inline-flex h-2 w-2 rounded-full bg-cyan-400" />
-            </span>
-            {profile.role}
+          <span className="inline-flex items-center gap-2 rounded-full border border-indigo-500/30 bg-indigo-500/10 px-4 py-1.5 text-sm font-medium text-indigo-500 sm:text-base">
+            <span className="wave" aria-hidden="true">👋</span>
+            Hi, I'm
           </span>
 
-
-<span className="inline-flex items-center gap-2 rounded-full border border-indigo-500/30 bg-indigo-500/10 px-4 py-1.5 text-sm font-medium text-indigo-500 sm:text-base">
-  <span className="wave" aria-hidden="true">👋</span>
-  Hello, I'm 
-</span>
-
-
-<h1 className="name-glow mt-5 text-5xl font-extrabold tracking-tight sm:text-6xl lg:text-7xl">
-  <AnimatedName text={profile.name} />
-</h1>
-<div className="animate-draw-line mx-auto mt-3 h-1 w-24 origin-left rounded-full bg-linear-to-r from-indigo-500 to-cyan-400 md:mx-0" />
+          <h1 className="name-glow mt-5 text-5xl font-extrabold tracking-tight sm:text-6xl lg:text-7xl">
+            <AnimatedName text={profile.name} />
+          </h1>
+          <div className="animate-draw-line mx-auto mt-3 h-1 w-24 origin-left rounded-full bg-linear-to-r from-indigo-500 to-cyan-400 md:mx-0" />
 
           <h2 className="mt-4 text-2xl font-semibold text-slate-800 sm:text-3xl dark:text-slate-100">
             <TypingRoles roles={profile.roles} />

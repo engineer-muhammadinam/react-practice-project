@@ -141,3 +141,6 @@ html {
     animation: none !important;
   }
 }
+html {
+  scroll-padding-top: 5rem;
+}
