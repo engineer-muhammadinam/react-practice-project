@@ -144,3 +144,32 @@ html {
 html {
   scroll-padding-top: 5rem;
 }
+/* ---------- Scroll blink-in effect ---------- */
+.reveal-in {
+  animation: blink-in 1s ease-out both;
+}
+
+@keyframes blink-in {
+  0% {
+    opacity: 0;
+    transform: translateY(40px) scale(0.96);
+    filter: blur(8px);
+  }
+  25% {
+    opacity: 1;
+  }
+  38% {
+    opacity: 0.35;
+  }
+  52% {
+    opacity: 1;
+  }
+  66% {
+    opacity: 0.75;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+}
