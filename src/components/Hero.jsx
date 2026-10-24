@@ -114,7 +114,7 @@ export default function Hero() {
             <div className="text-center md:text-left">
               <span className="inline-flex items-center gap-2 rounded-full border border-indigo-500/30 bg-indigo-500/10 px-4 py-1.5 text-sm font-medium text-indigo-500 sm:text-base">
                 <span className="wave" aria-hidden="true">👋</span>
-                Hi, Hello! I'm
+                Hi, I'm
               </span>
 
               <h1 className="name-glow mt-5 text-5xl font-extrabold tracking-tight sm:text-6xl lg:text-7xl">
