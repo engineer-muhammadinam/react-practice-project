@@ -1,6 +1,7 @@
 import { profile, contact } from '../data'
 import TypingRoles from './TypingRoles'
 import AnimatedName from './AnimatedName'
+import Reveal from './Reveal'
 
 const nodes = [
   [80, 120], [220, 60], [360, 150], [520, 80], [700, 140],
@@ -87,61 +88,67 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative flex min-h-screen items-center justify-center overflow-hidden px-6 pt-24 pb-24"
+      className="relative flex min-h-screen items-center justify-center overflow-hidden px-6 pt-28 pb-24"
     >
       <Background />
 
-      <div className="flex max-w-5xl flex-col-reverse items-center gap-12 md:flex-row md:gap-16">
-        <div className="animate-fade-up text-center md:text-left">
-          <span className="inline-flex items-center gap-2 rounded-full border border-indigo-500/30 bg-indigo-500/10 px-4 py-1.5 text-sm font-medium text-indigo-500 sm:text-base">
-            <span className="wave" aria-hidden="true">👋</span>
-            Hi, I'm
-          </span>
-
-          <h1 className="name-glow mt-5 text-5xl font-extrabold tracking-tight sm:text-6xl lg:text-7xl">
-            <AnimatedName text={profile.name} />
-          </h1>
-          <div className="animate-draw-line mx-auto mt-3 h-1 w-24 origin-left rounded-full bg-linear-to-r from-indigo-500 to-cyan-400 md:mx-0" />
-
-          <h2 className="mt-4 text-2xl font-semibold text-slate-800 sm:text-3xl dark:text-slate-100">
-            <TypingRoles roles={profile.roles} />
-          </h2>
-
-          <p className="mx-auto mt-6 max-w-xl text-slate-600 md:mx-0 dark:text-slate-400">
-            {profile.tagline}
-          </p>
-
-          <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center md:justify-start">
-            <a
-              href={contact.github}
-              target="_blank"
-              rel="noreferrer"
-              className="group inline-flex items-center gap-2 rounded-lg bg-linear-to-r from-indigo-500 to-cyan-500 px-6 py-3 font-medium text-white shadow-lg shadow-indigo-500/25 transition hover:-translate-y-0.5 hover:shadow-indigo-500/40"
-            >
-              Explore My Projects
-              <span className="transition group-hover:translate-x-1">
-                <ArrowIcon />
+      <Reveal className="w-full max-w-6xl">
+        <div className="rounded-3xl border border-slate-200 border-t-4 border-t-indigo-500 bg-white/70 p-6 shadow-xl shadow-indigo-500/10 backdrop-blur-md sm:p-10 lg:p-14 dark:border-slate-800 dark:border-t-indigo-500 dark:bg-slate-900/60">
+          <div className="flex flex-col-reverse items-center gap-12 md:flex-row md:justify-between md:gap-10">
+            <div className="text-center md:text-left">
+              <span className="inline-flex items-center gap-2 rounded-full border border-indigo-500/30 bg-indigo-500/10 px-4 py-1.5 text-sm font-medium text-indigo-500 sm:text-base">
+                <span className="wave" aria-hidden="true">👋</span>
+                Hi, Hello! I'm
               </span>
-            </a>
-            <a
-              href="#contact"
-              className="group inline-flex items-center gap-2 rounded-lg border border-slate-300 px-6 py-3 font-medium text-slate-700 transition hover:-translate-y-0.5 hover:border-indigo-400 hover:text-indigo-500 dark:border-slate-700 dark:text-slate-200"
-            >
-              <MailIcon />
-              Let's Connect
-            </a>
+
+              <h1 className="name-glow mt-5 text-5xl font-extrabold tracking-tight sm:text-6xl lg:text-7xl">
+                <AnimatedName text={profile.name} />
+              </h1>
+              <div className="animate-draw-line mx-auto mt-3 h-1 w-24 origin-left rounded-full bg-linear-to-r from-indigo-500 to-cyan-400 md:mx-0" />
+
+              <h2 className="mt-4 text-2xl font-semibold text-slate-800 sm:text-3xl dark:text-slate-100">
+                <TypingRoles roles={profile.roles} />
+              </h2>
+
+              <div className="mx-auto mt-6 max-w-xl rounded-2xl border border-slate-200 border-l-4 border-l-indigo-500 bg-white/70 p-5 shadow-lg shadow-indigo-500/10 backdrop-blur-md md:mx-0 sm:p-6 dark:border-slate-800 dark:border-l-indigo-500 dark:bg-slate-900/60">
+                <p className="leading-relaxed text-slate-600 dark:text-slate-300">
+                  {profile.tagline}
+                </p>
+              </div>
+
+              <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center md:justify-start">
+                <a
+                  href={contact.github}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="group inline-flex items-center gap-2 rounded-lg bg-linear-to-r from-indigo-500 to-cyan-500 px-6 py-3 font-medium text-white shadow-lg shadow-indigo-500/25 transition hover:-translate-y-0.5 hover:shadow-indigo-500/40"
+                >
+                  Explore My Projects
+                  <span className="transition group-hover:translate-x-1">
+                    <ArrowIcon />
+                  </span>
+                </a>
+                <a
+                  href="#contact"
+                  className="group inline-flex items-center gap-2 rounded-lg border border-slate-300 px-6 py-3 font-medium text-slate-700 transition hover:-translate-y-0.5 hover:border-indigo-400 hover:text-indigo-500 dark:border-slate-700 dark:text-slate-200"
+                >
+                  <MailIcon />
+                  Let's Connect
+                </a>
+              </div>
+            </div>
+
+            <div className="relative shrink-0">
+              <div className="animate-glow absolute -inset-4 rounded-full bg-linear-to-r from-indigo-500 to-cyan-500 blur-2xl" />
+              <img
+                src={profile.photo}
+                alt={profile.name}
+                className="relative h-52 w-52 rounded-full border-4 border-indigo-500/80 object-cover shadow-xl sm:h-64 sm:w-64 lg:h-72 lg:w-72"
+              />
+            </div>
           </div>
         </div>
-
-        <div className="animate-fade-up relative">
-          <div className="animate-glow absolute -inset-4 rounded-full bg-linear-to-r from-indigo-500 to-cyan-500 blur-2xl" />
-          <img
-            src={profile.photo}
-            alt={profile.name}
-            className="relative h-56 w-56 rounded-full border-4 border-indigo-500/80 object-cover shadow-xl sm:h-72 sm:w-72"
-          />
-        </div>
-      </div>
+      </Reveal>
 
       <a
         href="#about"
